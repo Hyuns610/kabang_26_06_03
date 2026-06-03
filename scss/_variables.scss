@@ -5,3 +5,10 @@ $font-primary:
   BlinkMacSystemFont,
   "Segoe UI",
   sans-serif;
+
+// Padding
+$gutter: 20px;
+
+@media (max-width: 1599px) {
+  $gutter: 16px;
+}
