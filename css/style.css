@@ -21,6 +21,9 @@
 #header {
   position: relative;
 }
+#header:hover {
+  background-color: #fff;
+}
 
 .logo {
   display: block;
@@ -87,6 +90,43 @@
   transition: all 0.4s ease-in-out;
   width: 16px !important;
   height: 16px !important;
+}
+
+.select-lang-menu li {
+  position: relative;
+}
+.select-lang-menu li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -1px;
+  transform: translateY(-55%);
+  background-color: #aaa;
+  width: 2px;
+  height: 12px;
+  z-index: 10;
+}
+.select-lang-menu .ic-link {
+  width: 24px;
+  height: 24px;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  display: inline-block;
+  background-color: #000;
+  padding-inline: 20px;
+}
+.select-lang-menu .ko-link {
+  -webkit-mask-image: url(../assets/images/ic-kr.svg);
+          mask-image: url(../assets/images/ic-kr.svg);
+}
+.select-lang-menu .en-link {
+  -webkit-mask-image: url(../assets/images/ic-en.svg);
+          mask-image: url(../assets/images/ic-en.svg);
+  background-color: #888;
 }
 
 html {
