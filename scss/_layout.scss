@@ -211,6 +211,23 @@
   height: 100svh;
   overflow: hidden;
 
+  .text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    span {
+      display: inline-block;
+      color: $white-100;
+      font-size: 6.25vw;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+  }
+
   .video-box {
     width: 100%;
     height: 100%;
