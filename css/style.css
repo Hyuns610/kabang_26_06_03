@@ -4,3 +4,23 @@
   font-weight: 400;
   font-display: swap;
 }
+.con {
+  max-width: 1460px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media (max-width: 1599px) {
+  .con {
+    max-width: 100%;
+    padding-left: 52px;
+    padding-right: 52px;
+  }
+}
+
+.logo {
+  display: block;
+  width: 110px;
+  height: 18px;
+  background: url(../assets/images/logo.svg) no-repeat center/contain;
+}
