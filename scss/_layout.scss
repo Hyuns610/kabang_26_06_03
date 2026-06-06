@@ -59,10 +59,15 @@
 }
 
 .menu-wrap {
-  .depth-list {
+  .depth1-list {
     &:hover {
       .depth1-link {
         color: #444;
+      }
+
+      .depth2-menu-wrap {
+        opacity: 1;
+        height: 183px;
       }
     }
   }
@@ -87,16 +92,68 @@
       }
     }
   }
+}
 
-  .icon-outlink {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(200%) translateY(-50%);
-    opacity: 0;
+.icon-outlink {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(200%) translateY(-50%);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  width: 16px !important;
+  height: 16px !important;
+  z-index: 40;
+}
+
+// 2차 메뉴 구현 시작
+.depth2-menu-wrap {
+  position: absolute;
+  top: 100%;
+  width: 390px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  z-index: 30;
+  padding: 0 21px;
+
+  .depth2-menu-inner {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 22px 0 30px 0;
+  }
+
+  ul {
+    width: 185px;
+    max-width: 185px;
+  }
+
+  li {
+    margin-bottom: 12px;
+  }
+
+  a {
+    display: inline-flex;
     transition: all 0.4s ease-in-out;
-    width: 16px !important;
-    height: 16px !important;
+    font-size: 1.4rem;
+    position: relative;
+    font-weight: 500;
+
+    .icon-outlink {
+      transform: translateX(170%) translateY(-50%);
+    }
+
+    &:hover {
+      color: #444;
+
+      .icon-outlink {
+        opacity: 1;
+      }
+    }
   }
 }
 
