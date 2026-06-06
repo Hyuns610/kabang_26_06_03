@@ -22,7 +22,7 @@
   </head>
   <body>
     <div class="site-wrap">
-      <header id="header" class="h-[62px]">
+      <header id="header" class="h-[62px] fixed inset-x-0">
         <div class="header-inner con flex h-full justify-between">
           <div class="header__left flex items-center">
             <a href="#" class="logo" aria-label="카카오뱅크 홈으로"></a>
@@ -143,6 +143,31 @@
           </div>
         </div>
       </header>
+
+      <main class="content-wrap">
+        <section class="main-section-wrap">
+          <div class="background-wrap">
+            <div class="text-box"></div>
+            <div class="video-box">
+              <video
+                id="main-visual-video"
+                muted=""
+                loop=""
+                autoplay=""
+                playsinline=""
+                webkit-playsinline=""
+                preload="none"
+                aria-label="카카오뱅크 메인 비주얼 영상"
+              >
+                <source
+                  src="assets/videos/main-visual-video_pc.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   </body>
 </html>
