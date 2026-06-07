@@ -366,6 +366,71 @@
       text-align: center;
     }
   }
+
+  &-content {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    height: 665px;
+
+    .swiper-container {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1920px;
+      height: 100%;
+      padding: 9px 0 110px 0;
+    }
+
+    .swiper-slide {
+      position: absolute;
+      width: 335px !important;
+      height: 550px;
+      max-width: 335px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-right: 20px;
+      top: 0px;
+      left: calc(50% + 9px);
+      transform: translateX(-50%);
+      transition:
+        top 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        left 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+      &-1.spread {
+        left: 5.9375% !important;
+        transform: rotate(-3deg) !important;
+        top: 0px !important;
+      }
+
+      &-2.spread {
+        left: 20.3645% !important;
+        transform: translate(-50%, 0%) translate(50%, 0px) !important;
+        top: 102px !important;
+      }
+
+      &-3.spread {
+        left: calc(50% + 9px) !important;
+        transform: translateX(-50%) !important;
+        z-index: 1;
+      }
+
+      &-4.spread {
+        left: 63.125% !important;
+        transform: translate(-50%, 0%) translate(50%, 0px) !important;
+        top: 30px !important;
+      }
+
+      &-5.spread {
+        left: calc(75.625% + 23px) !important;
+        transform: translate(-50%, 0%) translate(50%, 0px) rotate(2deg) !important;
+        top: 73px !important;
+      }
+    }
+  }
 }
 
 // 두 번째 섹션 구현 끝
