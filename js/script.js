@@ -44,8 +44,65 @@ function initSwipers() {
   );
 
   if (section4SwiperEl) {
+    const section4PaginationEl = section4SwiperEl.querySelector(
+      ".progress-bar .swiper-pagination",
+    );
+
     swiperInstances.section4 = new Swiper(section4SwiperEl, {
       slidesPerView: 1,
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      observer: true,
+      observeParents: true,
+      speed: 400,
+      loop: true,
+      allowTouchMove: false,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: section4PaginationEl,
+        clickable: true,
+        type: "bullets",
+        renderBullet: function (index, className) {
+          return (
+            '<span class="' +
+            className +
+            '">' +
+            "<i></i>" +
+            "<b></b>" +
+            "</span>"
+          );
+        },
+      },
+      on: {
+        init: function () {
+          const realSlideCount = section4SwiperEl.querySelectorAll(
+            ".swiper-slide:not(.swiper-slide-duplicate)",
+          ).length;
+
+          if (realSlideCount <= 1 && section4PaginationEl) {
+            section4PaginationEl.style.display = "none";
+          }
+        },
+        slideChange: function () {
+          const bullets = section4SwiperEl.querySelectorAll(
+            ".swiper-pagination-bullet",
+          );
+          const realIndex = this.realIndex;
+
+          bullets.forEach((bullet, index) => {
+            if (index < realIndex) {
+              bullet.classList.add("is-passed");
+            } else {
+              bullet.classList.remove("is-passed");
+            }
+          });
+        },
+      },
     });
   }
 
