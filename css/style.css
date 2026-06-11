@@ -501,6 +501,60 @@
   transition: all 0.3s ease-in-out;
 }
 
+.section-4-title {
+  font-size: 4rem;
+  line-height: 1.36;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.section-4-content .left-slide {
+  width: 57.639%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.section-4-content .right-slide {
+  width: 42.361%;
+  overflow: hidden;
+}
+
+.section-4__swiper-container .slide-container div {
+  flex-shrink: 0;
+}
+.section-4__swiper-container .swiper-slide {
+  height: 610px;
+}
+.section-4__swiper-container .swiper-slide .img-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.section-4__swiper-container .swiper-slide .img-box .img-cont {
+  width: 100%;
+  height: 100%;
+}
+.section-4__swiper-container .swiper-slide-1 .img-cont {
+  background: url(../assets/images/sec04_slide-img-01.jpg) no-repeat center/cover;
+}
+.section-4__swiper-container .swiper-slide-2 .img-cont {
+  background: url(../assets/images/sec04_slide-img-02.jpg) no-repeat center/cover;
+}
+.section-4__swiper-container .swiper-slide-3 .img-cont {
+  background: url(../assets/images/sec04_slide-img-03.jpg) no-repeat center/cover;
+}
+.section-4__swiper-container .swiper-slide-4 .img-cont {
+  background: url(../assets/images/sec04_slide-img-04.jpg) no-repeat center/cover;
+}
+.section-4__swiper-container .swiper-slide-5 .img-cont {
+  background: url(../assets/images/sec04_slide-img-05.jpg) no-repeat center/cover;
+}
+.section-4__swiper-container .swiper-slide-6 .img-cont {
+  background: url(../assets/images/sec04_slide-img-06.jpg) no-repeat center/cover;
+}
+
 /* =========================== */
 /*  섹션 구현 끝 */
 html {

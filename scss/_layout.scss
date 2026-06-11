@@ -575,5 +575,100 @@
 
 // 세 번째 섹션 구현 끝
 
+// 네 번째 섹션 구현 시작
+
+.section-4 {
+  &-title {
+    font-size: 4rem;
+    line-height: 1.36;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  &-content {
+    .left-slide {
+      width: 57.639%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .right-slide {
+      width: 42.361%;
+      overflow: hidden;
+    }
+  }
+}
+
+// 네 번째 섹션 구현 끝
+
+.section-4__swiper-container {
+  .slide-container {
+    div {
+      flex-shrink: 0;
+    }
+  }
+
+  .swiper-slide {
+    height: 610px;
+
+    .img-box {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 20px;
+
+      .img-cont {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-1 {
+      .img-cont {
+        background: url(../assets/images/sec04_slide-img-01.jpg) no-repeat
+          center / cover;
+      }
+    }
+
+    &-2 {
+      .img-cont {
+        background: url(../assets/images/sec04_slide-img-02.jpg) no-repeat
+          center / cover;
+      }
+    }
+
+    &-3 {
+      .img-cont {
+        background: url(../assets/images/sec04_slide-img-03.jpg) no-repeat
+          center / cover;
+      }
+    }
+
+    &-4 {
+      .img-cont {
+        background: url(../assets/images/sec04_slide-img-04.jpg) no-repeat
+          center / cover;
+      }
+    }
+
+    &-5 {
+      .img-cont {
+        background: url(../assets/images/sec04_slide-img-05.jpg) no-repeat
+          center / cover;
+      }
+    }
+
+    &-6 {
+      .img-cont {
+        background: url(../assets/images/sec04_slide-img-06.jpg) no-repeat
+          center / cover;
+      }
+    }
+  }
+}
+
 /* =========================== */
 /*  섹션 구현 끝 */
