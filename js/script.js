@@ -78,6 +78,10 @@ function initSwipers() {
           );
         },
       },
+      navigation: {
+        prevEl: ".section-4-content .swiper-btn-prev",
+        nextEl: ".section-4-content .swiper-btn-next",
+      },
       on: {
         init: function () {
           const realSlideCount = section4SwiperEl.querySelectorAll(
@@ -101,6 +105,7 @@ function initSwipers() {
               bullet.classList.remove("is-passed");
             }
           });
+          updateSection4Content(realIndex);
         },
       },
     });
@@ -164,9 +169,55 @@ function initSection2ScrollAnimation() {
   checkSection2Scroll();
 }
 
+function updateSection4Content(index) {
+  if (typeof storyData === "undefined" || !storyData[index]) return;
+
+  const data = storyData[index];
+  const leftSlide = document.querySelector(".section-4-content .left-slide");
+
+  if (!leftSlide) return;
+
+  // 아이콘 이미지 업데이트
+  const iconBox = leftSlide.querySelector(".icon-box i");
+  if (iconBox) {
+    iconBox.style.backgroundImage = `url('${data.icon}')`;
+    iconBox.style.backgroundSize = "contain";
+    iconBox.style.backgroundRepeat = "no-repeat";
+    iconBox.style.display = "inline-block";
+    iconBox.style.width = "30px";
+    iconBox.style.height = "30px";
+  }
+
+  // 아이콘 타이틀 업데이트
+  const iconTitle = leftSlide.querySelector(".icon-title");
+  if (iconTitle) {
+    iconTitle.textContent = data.iconTitle;
+  }
+
+  // 스토리 타이틀 업데이트
+  const storyTitle = leftSlide.querySelector(".story-title");
+  if (storyTitle) {
+    storyTitle.textContent = data.secTitle;
+  }
+
+  // 스토리 설명 업데이트
+  const storyDesc = leftSlide.querySelector(".story-desc");
+  if (storyDesc) {
+    storyDesc.textContent = data.secDesc;
+  }
+
+  // 링크 업데이트
+  const linkBtn = leftSlide.querySelector(".link-btn");
+  if (linkBtn) {
+    linkBtn.href = data.link;
+    linkBtn.setAttribute("aria-label", data.ariaLabel);
+  }
+}
+
 // ========================================
 // 초기화 실행
 // ========================================
 initNavigation();
+updateSection4Content(0); // 초기 로드 시 첫 번째 데이터로 렌더링
 initSwipers();
 initSection2ScrollAnimation();
