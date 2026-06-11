@@ -819,5 +819,83 @@
   }
 }
 
+// 다섯 번째 섹션 구현 시작
+.section-5 {
+  .flex-item {
+    width: calc(50% - 10px);
+  }
+
+  .flex-cont {
+    padding: 24px 32px 24px 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f7f7f7;
+    border-radius: 16px;
+
+    &:hover {
+      .arrow-icon-box {
+        &::after {
+          top: 50%;
+          left: 50%;
+        }
+
+        .arrow-icon {
+          top: -100%;
+          left: 200%;
+        }
+      }
+    }
+
+    h6 {
+      font-size: 2rem;
+      line-height: 1.44;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .arrow-icon-box {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #e6e6e6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .arrow-icon {
+        position: absolute;
+        display: inline-block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 14px;
+        height: 14px;
+        background: url(../assets/images/ic-circle-outlink-b.svg) no-repeat
+          center / cover;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 200%;
+        left: -100%;
+        transform: translate(-50%, -50%);
+        width: 14px;
+        height: 14px;
+        background: url(../assets/images/ic-circle-outlink-b.svg) no-repeat
+          center / cover;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+// 다섯 번째 섹션 구현 끝
+
 /* =========================== */
 /*  섹션 구현 끝 */
