@@ -980,6 +980,17 @@
     position: absolute;
     top: 0;
     right: calc($gutter / 2);
+    overflow: hidden;
+
+    &:hover {
+      .arrow-up {
+        top: -150%;
+      }
+
+      &::after {
+        top: 50%;
+      }
+    }
 
     .btn-top {
       width: 52px;
@@ -991,6 +1002,31 @@
       align-items: center;
       cursor: pointer;
       transition: all 0.3s ease;
+    }
+
+    .arrow-up {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      background: url(../assets/images/ic-arrow-up.svg) no-repeat center /
+        contain;
+      transition: all 0.4s ease-in-out;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 150%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      background: url(../assets/images/ic-arrow-up.svg) no-repeat center /
+        contain;
+      transition: all 0.4s ease-in-out;
     }
   }
 
