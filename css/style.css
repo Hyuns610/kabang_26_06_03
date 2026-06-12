@@ -846,6 +846,7 @@
   height: 30px;
   background: url(../assets/images/ic-arrow-up.svg) no-repeat center/contain;
   transition: all 0.4s ease-in-out;
+  pointer-events: none;
 }
 #footer .footer-top-btn::after {
   content: "";
@@ -857,6 +858,7 @@
   height: 30px;
   background: url(../assets/images/ic-arrow-up.svg) no-repeat center/contain;
   transition: all 0.4s ease-in-out;
+  pointer-events: none;
 }
 #footer .footer-bottom {
   padding-top: 32px;
