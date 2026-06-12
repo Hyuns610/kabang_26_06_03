@@ -29,9 +29,16 @@
 
 #header {
   z-index: 999;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 
   &:hover {
     background-color: #fff;
+  }
+
+  // 스크롤 다운 시 헤더 숨김 (아래 -> 위로 슬라이드)
+  &.header-hidden {
+    transform: translateY(-100%);
   }
 }
 
@@ -966,7 +973,7 @@
     li a {
       font-size: 1.4rem;
       line-height: 1.5;
-      font-weight: 400;
+      font-weight: 600;
       color: #888;
       transition: color 0.2s ease;
 
@@ -1095,11 +1102,6 @@
         transition: color 0.2s ease;
 
         &:hover {
-          color: #444;
-        }
-
-        strong {
-          font-weight: 700;
           color: #444;
         }
       }

@@ -231,6 +231,55 @@ function initTopButton() {
 }
 
 // ========================================
+// 헤더 스크롤 이벤트 - 스크롤 방향에 따라 헤더 슬라이드
+// ========================================
+function initHeaderScroll() {
+  const header = document.getElementById("header");
+  if (!header) return;
+
+  const bgChangePoint = 200; // 배경색 변경 위치
+  const hideStartPoint = 500; // 헤더 숨길 시작 위치
+
+  let lastScrollY = 0;
+  let ticking = false;
+
+  function handleHeaderScroll() {
+    const currentScrollY = window.scrollY;
+
+    // 배경색 변경
+    if (currentScrollY >= bgChangePoint) {
+      header.classList.add("bg-white");
+    } else {
+      header.classList.remove("bg-white");
+    }
+
+    // 헤더 숨김 / 표시
+    if (currentScrollY <= hideStartPoint) {
+      // 헤더 표시
+      header.classList.remove("header-hidden");
+    } else if (currentScrollY > lastScrollY) {
+      // 스크롤 다운 → 헤더 숨김 (아래→위로 슬라이드)
+      header.classList.add("header-hidden");
+    } else {
+      // 스크롤 업 → 헤더 표시 (위→아래로 슬라이드)
+      header.classList.remove("header-hidden");
+    }
+
+    lastScrollY = currentScrollY;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        handleHeaderScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+}
+
+// ========================================
 // 초기화 실행
 // ========================================
 initNavigation();
@@ -238,3 +287,4 @@ updateSection4Content(0); // 초기 로드 시 첫 번째 데이터로 렌더링
 initSwipers();
 initSection2ScrollAnimation();
 initTopButton();
+initHeaderScroll();

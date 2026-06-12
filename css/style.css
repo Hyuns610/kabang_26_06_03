@@ -35,9 +35,14 @@
 /* 헤더 구현 시작 */
 #header {
   z-index: 999;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 #header:hover {
   background-color: #fff;
+}
+#header.header-hidden {
+  transform: translateY(-100%);
 }
 
 .logo {
@@ -802,7 +807,7 @@
 #footer .footer-nav-depth2 li a {
   font-size: 1.4rem;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 600;
   color: #888;
   transition: color 0.2s ease;
 }
@@ -909,10 +914,6 @@
   transition: color 0.2s ease;
 }
 #footer .footer-link-list li a:hover {
-  color: #444;
-}
-#footer .footer-link-list li a strong {
-  font-weight: 700;
   color: #444;
 }
 #footer .footer-copyright {
