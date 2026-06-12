@@ -280,6 +280,33 @@ function initHeaderScroll() {
 }
 
 // ========================================
+// 섹션 등장 애니메이션
+// ========================================
+function initSectionReveal() {
+  const sections = document.querySelectorAll(
+    ".section-2, .section-3, .section-4, .section-5",
+  );
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+
+          // 최초 1회만 실행
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.25,
+    },
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+
+// ========================================
 // 초기화 실행
 // ========================================
 initNavigation();
@@ -288,3 +315,4 @@ initSwipers();
 initSection2ScrollAnimation();
 initTopButton();
 initHeaderScroll();
+initSectionReveal();
